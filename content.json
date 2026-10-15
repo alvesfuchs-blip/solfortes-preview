@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "status": "preview",
+  "capture_enabled": false,
+  "mcp_enabled": false,
+  "webmcp_optional_readonly": true,
+  "pages": [
+    {
+      "path": "/solfortes-preview/",
+      "title": "Energia e engenharia para o seu projeto.",
+      "description": "Conheça caminhos para avaliar energia solar, armazenamento e consumo de energia. Cada projeto começa pelo entendimento da necessidade e das condições do local."
+    },
+    {
+      "path": "/solfortes-preview/solucoes/",
+      "title": "Soluções para avaliar sua energia.",
+      "description": "Escolha sua necessidade. A análise técnica define o escopo adequado e verifica a disponibilidade de atendimento."
+    },
+    {
+      "path": "/solfortes-preview/solucoes/energia-solar/",
+      "title": "Energia solar para o seu imóvel.",
+      "description": "Vamos entender o consumo e as características do imóvel para avaliar um projeto solar."
+    },
+    {
+      "path": "/solfortes-preview/solucoes/baterias/",
+      "title": "Armazenamento para sua necessidade de energia.",
+      "description": "Conte quais equipamentos precisam funcionar, por quanto tempo e em quais condições. Esses dados ajudam a avaliar capacidade e potência necessárias."
+    },
+    {
+      "path": "/solfortes-preview/solucoes/eficiencia-energetica/",
+      "title": "Entenda onde sua energia é consumida.",
+      "description": "Um diagnóstico parte dos equipamentos, hábitos de uso e medições disponíveis para avaliar oportunidades de redução de consumo."
+    },
+    {
+      "path": "/solfortes-preview/privacidade/",
+      "title": "Privacidade desta prévia.",
+      "description": "Esta versão serve à revisão do site. Não recebe solicitações, não envia dados de formulários e não possui tags de publicidade ou analytics ativos."
+    }
+  ]
+}
