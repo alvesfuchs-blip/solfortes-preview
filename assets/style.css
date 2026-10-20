@@ -101,3 +101,8 @@ html:not(.js-menu) .flow-track::before{animation:none;left:41%}html:not(.js-menu
  .hero-v3 .hero-actions>.text-link{order:5;align-self:flex-start;margin-top:10px}
  .hero-v3 .hero-meta{order:6}
 }
+
+/* Technician entry: destination awaits verified deployment and access permissions. */
+.technician-entry{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--sand);line-height:1.35}.technician-entry small{font-size:9px;color:var(--muted);max-width:140px}.technician-entry[aria-disabled="true"]{cursor:default}@media(max-width:700px){.main-nav .technician-entry{padding:12px 0}.technician-entry small{max-width:none}}
+
+.team-roles{display:flex;flex-direction:column;gap:3px;font-size:9px;color:var(--sand)}.team-roles [aria-disabled="true"]{cursor:default}@media(max-width:700px){.team-roles{font-size:12px;gap:8px}}

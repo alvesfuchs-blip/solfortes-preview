@@ -1,0 +1,10 @@
+{
+  "status": "preparation",
+  "destinations": {
+    "technician": null,
+    "consultant": null,
+    "operations": null
+  },
+  "runtimeResolver": false,
+  "accessGrantsCreated": false
+}

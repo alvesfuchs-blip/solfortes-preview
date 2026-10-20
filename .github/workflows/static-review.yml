@@ -1,0 +1,23 @@
+name: Static review
+on:
+  push:
+    branches: ['prepare/**']
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check preparation safeguards
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Check JavaScript syntax
+        run: for f in assets/*.js lp/solar-residencial/*.js; do node --check "$f"; done
+      - name: Check frontend validation and renderer lifecycle
+        run: node tests/test_frontend.cjs
+      - name: Check capture-OFF simulation states
+        run: node tests/test_simulation.cjs
+      - name: Check form and navigation DOM contracts
+        run: node tests/test_ui.cjs
