@@ -4,7 +4,7 @@ const channel=document.getElementById('channel');
 const contact=document.getElementById('contact');
 let previousChannel=channel.value;
 const contactDrafts={phone:'',email:''};
-channel.addEventListener('change',()=>{const previousKind=previousChannel==='email'?'email':'phone';const nextKind=channel.value==='email'?'email':'phone';contactDrafts[previousKind]=contact.value;if(previousKind!==nextKind)contact.value=contactDrafts[nextKind];previousChannel=channel.value;contact.type=channel.value==='email'?'email':'tel';contact.autocomplete=channel.value==='email'?'email':'tel';document.getElementById('contact-label').textContent=channel.value==='email'?'E-mail':'Telefone com DDD';contact.placeholder=channel.value==='email'?'nome@example.invalid':'(00) 00000-0000';});
+channel.addEventListener('change',()=>{const previousKind=previousChannel==='email'?'email':'phone';const nextKind=channel.value==='email'?'email':'phone';contactDrafts[previousKind]=contact.value;if(previousKind!==nextKind)contact.value=contactDrafts[nextKind];previousChannel=channel.value;contact.type=channel.value==='email'?'email':'tel';contact.autocomplete='off';document.getElementById('contact-label').textContent=channel.value==='email'?'E-mail':'Telefone com DDD';contact.placeholder=channel.value==='email'?'nome@example.invalid':'(00) 00000-0000';});
 form.addEventListener('submit',(event)=>{
  event.preventDefault();
  const data=Object.fromEntries(new FormData(form)); const result=LPCore.preview(data);

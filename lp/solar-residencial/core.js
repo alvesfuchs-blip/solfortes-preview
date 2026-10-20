@@ -15,5 +15,28 @@ function validate(x){
 }
 function consentReducer(state,action){if(action==='reject')return {analytics:false,ads:false};if(action==='analytics')return {analytics:true,ads:false};return {analytics:false,ads:false};}
 function preview(x){const errors=validate(x);return Object.keys(errors).length?{state:'invalid',errors}:{state:'disabled',errors:{},message:'Campos conferidos nesta página. Nenhuma solicitação foi enviada. Integração Headless pendente.'};}
-const api={validate,preview,consentReducer}; if(typeof module==='object'&&module.exports)module.exports=api;else root.LPCore=api;
+// Test-only in-memory adapter. No transport, storage, production endpoint or success state.
+// The page continues to call preview(); creating this adapter cannot enable capture.
+function createSimulation(options={}){
+ const scenario=['error','uncertain','disabled'].includes(options.scenario)?options.scenario:'disabled';
+ const delay=Math.min(1000,Math.max(0,Number(options.delayMs)||0));
+ let current={state:'idle',errors:{},simulated:true,captureEnabled:false};
+ const snapshot=()=>({...current,errors:{...current.errors}});
+ async function run(input){
+  if(current.state==='pending')return snapshot();
+  const checked=preview(input);
+  if(checked.state==='invalid'){current={...checked,simulated:true,captureEnabled:false};return snapshot();}
+  current={state:'pending',errors:{},simulated:true,captureEnabled:false,message:'Simulação em andamento. Nenhum dado será enviado.'};
+  await new Promise(resolve=>setTimeout(resolve,delay));
+  const messages={
+   disabled:'Simulação concluída. Captação desligada. Nenhuma solicitação foi enviada.',
+   error:'Erro simulado. Nenhuma solicitação foi enviada. Confira os campos antes de repetir a simulação.',
+   uncertain:'Resultado incerto simulado. Nenhuma solicitação foi enviada. Em uma integração futura, consulte o estado antes de repetir.'
+  };
+  current={state:scenario,errors:{},simulated:true,captureEnabled:false,message:messages[scenario]};
+  return snapshot();
+ }
+ return Object.freeze({run,getState:snapshot});
+}
+const api={validate,preview,consentReducer,createSimulation}; if(typeof module==='object'&&module.exports)module.exports=api;else root.LPCore=api;
 })(typeof window==='object'?window:globalThis);

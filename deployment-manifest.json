@@ -1,0 +1,36 @@
+{
+  "baseCommit": "c0c2857e966de3f4efd3e7f83b9c3797b0d8b0b0",
+  "captureEnabled": false,
+  "published": false,
+  "routes": [
+    "/",
+    "/lp/solar-residencial/"
+  ],
+  "files": {
+    "index.html": "3c23b6afef28c747f572906a31e9b86dace29a1fb87f5b6268b6e2de164dd90e",
+    "assets/style.css": "f31a12427ece1d6a47dee2502e2d68965faf7491d339665185232e2b8d33b564",
+    "assets/logo.png": "6249b8ab5653f5957dae9d1f4ea046e0a2b3045ba7af761a679a0303a69052f5",
+    "assets/solar-3d.js": "756a1142827d2d94f94cdd2067554cc2d19f862daec1d1ef88072fc99d4e3455",
+    "lp/solar-residencial/index.html": "ce53786610476297166c3377b128819b6dfd764e23caf46731142abcdff9e903",
+    "lp/solar-residencial/app.js": "278b5f5c17581dae92b10722a8da39495851d8a61813dd05719667fe8fbd22a9",
+    "lp/solar-residencial/core.js": "edcc7ff816b3982a2bfcbca1c199f801eb979222dca8a68447478bcb826d989d",
+    "vercel.json": "deb0225d696c4064e41e38ae509c45ac7f02cf32ddbef81ba7a08421dff03917",
+    "team-entry.config.json": "0c6452faa3bc327e6b2681bab62d173cc159ee8a676647fb1fc2680e12bf5aeb",
+    "tests/test_frontend.cjs": "55b0e26540c3c35a5d4855f772f6c71770a2bd68f8756df096403bb5234a990c",
+    ".github/workflows/static-review.yml": "7e27dd8171870223dac58172df326b6bd45004f029f551ffe67a68817166f288",
+    "DEPLOYMENT.md": "dd2d877bd301c18ae8152e14671235a50ff2bd40eebcc0f0d588d7d6cf6763bf",
+    "tests/test_deployment.py": "d3a9628afcd86179415617dca4300f394197e3a81e696a3c4e5bf08f80552f86",
+    "tests/test_integrity.py": "9a3f7c94b1ab241ae79e7b688fe0cf9347333f961286bea71b1db22e4a3d983b",
+    "tests/test_simulation.cjs": "67e8999cddf2e8b55e781033b38cb8574b0a9536ea6b6fdcb37a1e63a4dd60a2",
+    "tests/test_ui.cjs": "50c4927629fb420472d7a57a9a5678403710faa272b0d7f627233ef6c034edee",
+    "SITE_LP_QA.md": "103e84f8ce13310ade99b33450cd135cc52855e502018015f256f16430bbe156",
+    "HEADLESS_ADAPTER.md": "a709b8267d2a4c4d9a2d6095f76b40b290c5df26ee1bb0061d7398ac3b11a351"
+  },
+  "qaSourceParentCommit": "9589a604b41994be485da92e6fa28e47835b7cdb",
+  "qaLocalChanges": [
+    "Capture-OFF isolated in-memory simulation states",
+    "Keep preview autocomplete disabled when switching contact channel",
+    "Offline integrity and DOM contract regression gates",
+    "Test-only CI with five-minute timeout"
+  ]
+}
